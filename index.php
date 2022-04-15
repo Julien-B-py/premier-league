@@ -9,17 +9,32 @@ require_once './arrayTeams.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="./styles.css">
     <title>Document</title>
 </head>
 
 <body>
 
+    <nav>
+        <div class="nav-container">
+            <img src="./Premier_League_Logo.png" alt="">
+            <div class="nav-icons">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-user"></i>
+            </div>
+        </div>
+    </nav>
+
+
     <main>
+
 
         <?php
 
-        foreach ($premierLeagueTeams["teams"] as $team) {     ?>
+        foreach ($premierLeagueTeams["teams"] as $team) {
+
+        ?>
 
             <div class="card">
                 <div class="front">
@@ -35,7 +50,8 @@ require_once './arrayTeams.php';
                 </div>
                 <div class="back">
                     <img src="<?= $team["strTeamJersey"]  ?>" alt="">
-                    <button><a href="./detail.php?idTeam=<?= $team["idTeam"] ?>">Plus d'infos</a></button>
+                    <p><?= $team["strDescriptionEN"] ?></p>
+                    <button><a href="./detail.php?idTeam=<?= $team["idTeam"] ?>">Read more</a></button>
                 </div>
 
             </div>
