@@ -11,7 +11,8 @@ require_once './arrayTeams.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="./styles.css">
-    <title>Document</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <title>Premier League | Clubs</title>
 </head>
 
 <body>
@@ -26,37 +27,47 @@ require_once './arrayTeams.php';
         </div>
     </nav>
 
-
     <main>
 
+        <h1>Clubs</h1>
 
-        <?php
+        <div class="clubs">
 
-        foreach ($premierLeagueTeams["teams"] as $team) {
+            <?php
 
-        ?>
+            foreach ($premierLeagueTeams["teams"] as $team) {
 
-            <div class="card">
-                <div class="front">
-                    <img src="  <?= $team["strStadiumThumb"] ?>" alt="">
-                    <div class="details">
-                        <h2><?= $team["strTeam"] ?></h2>
-                        <p><?= $team["strStadium"] ?></p>
-                        <p><?= $team["intFormedYear"] ?></p>
+            ?>
+
+                <div class="card">
+
+                    <div class="front">
+
+                        <img src="  <?= $team["strStadiumThumb"] ?>" alt="">
+                        <div class="details">
+                            <h2><?= $team["strTeam"] ?></h2>
+                            <p><?= $team["strStadium"] ?></p>
+                            <p><?= $team["intFormedYear"] ?></p>
+                        </div>
+                        <div class="badge">
+                            <img src="<?= $team["strTeamBadge"] ?>" alt="">
+                        </div>
+
                     </div>
-                    <div class="badge">
-                        <img src="<?= $team["strTeamBadge"] ?>" alt="">
+
+                    <div class="back">
+
+                        <img src="<?= $team["strTeamJersey"]  ?>" alt="">
+                        <p><?= $team["strDescriptionEN"] ?></p>
+                        <button><a href="./detail.php?idTeam=<?= $team["idTeam"] ?>">Read more</a></button>
+
                     </div>
-                </div>
-                <div class="back">
-                    <img src="<?= $team["strTeamJersey"]  ?>" alt="">
-                    <p><?= $team["strDescriptionEN"] ?></p>
-                    <button><a href="./detail.php?idTeam=<?= $team["idTeam"] ?>">Read more</a></button>
+
                 </div>
 
-            </div>
+            <?php  }  ?>
 
-        <?php  }  ?>
+        </div>
 
     </main>
 

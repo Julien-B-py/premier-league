@@ -31,14 +31,13 @@ nav img {
 h1 {
     font-size: 2.5rem;
     color: #e9e4e2;
+    margin-bottom: 2rem;
+    font-weight: 900;
 }
 
 main {
-    display: flex;
-    flex-wrap: wrap;
     width: min(100%, 1200px);
     margin: 2rem auto;
-    gap: 1rem;
 }
 
 .nav-container {
@@ -52,6 +51,12 @@ main {
 .nav-icons {
     display: flex;
     gap: 1.5rem;
+}
+
+.clubs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .card {
