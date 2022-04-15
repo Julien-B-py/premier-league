@@ -35,7 +35,7 @@ require_once './arrayTeams.php';
                 </div>
                 <div class="back">
                     <img src="<?= $team["strTeamJersey"]  ?>" alt="">
-
+                    <button><a href="./detail.php?idTeam=<?= $team["idTeam"] ?>">Plus d'infos</a></button>
                 </div>
 
             </div>

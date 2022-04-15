@@ -8,6 +8,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: #2b2b2c;
 }
 
 main {
@@ -19,7 +20,6 @@ main {
 }
 
 .card {
-    cursor: pointer;
     min-height: 400px;
     perspective: 1000px;
     position: relative;
@@ -32,19 +32,32 @@ main {
     width: 100%;
     backface-visibility: hidden;
     transition: ease-in-out 600ms;
-    color: #fff;
+    color: #e9e4e2;
     display: flex;
     flex-direction: column;
+}
+
+.front::after {
+    content: "";
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%);
+    z-index: -1;
 }
 
 .front>img:first-child {
     width: 100%;
     height: 50%;
     object-fit: cover;
+    position: relative;
+    z-index: -2;
 }
 
+
+
 .badge {
-    background-color: #fff;
+    background-color: #e9e4e2;
     border-radius: 50%;
     padding-top: 30%;
     width: 30%;
@@ -58,7 +71,7 @@ main {
     content: "";
     position: absolute;
     transform: scale(1.1);
-    border: 2px dashed #fff;
+    border: 2px dotted #888585;
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -82,8 +95,12 @@ main {
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    background-color: red;
+    background-color: #262627;
     padding-top: 15%;
+}
+
+.details p {
+    color: #888585;
 }
 
 .back {
@@ -93,15 +110,39 @@ main {
     backface-visibility: hidden;
     transform: rotateY(-180deg);
     transition: ease-in-out 600ms;
-    background-color: rgb(121, 121, 121);
-    color: #fff;
+    background-color: #262627;
+    color: #e9e4e2;
     text-align: center;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .back img {
     width: 100%;
+}
+
+.back button {
+    background-color: #e9e4e2;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    transition: ease-in-out 300ms;
+    width: 50%;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.back a {
+    color: #000e14;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 1rem;
+}
+
+.back button:hover {
+    letter-spacing: 1px;
 }
 
 .card:hover .front {
