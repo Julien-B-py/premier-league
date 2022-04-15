@@ -17,15 +17,7 @@ require_once './arrayTeams.php';
 
 <body>
 
-    <nav>
-        <div class="nav-container">
-            <img src="./Premier_League_Logo.png" alt="">
-            <div class="nav-icons">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <i class="fa-solid fa-user"></i>
-            </div>
-        </div>
-    </nav>
+    <?php require_once "./components/navbar.php"; ?>
 
     <main>
 

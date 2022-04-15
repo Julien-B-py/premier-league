@@ -9,8 +9,8 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #2b2b2c;
-    padding-top: 82px;
-    padding-inline: 1rem;
+    padding-top: 86px;
+    /* padding-inline: 1rem; */
 }
 
 nav {
@@ -35,6 +35,8 @@ h1 {
     font-weight: 900;
 }
 
+
+
 main {
     width: min(100%, 1200px);
     margin: 2rem auto;
@@ -51,6 +53,39 @@ main {
 .nav-icons {
     display: flex;
     gap: 1.5rem;
+}
+
+header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+header img {
+    width: 100%;
+}
+
+.socials {
+    height: 40px;
+    background-color: #262627;
+    position: static;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.socials-container {
+    height: 100%;
+    width: min(100%, 1200px);
+    margin: auto;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.socials-container a {
+    color: #5da0db;
+    text-decoration: none;
 }
 
 .clubs {
@@ -210,8 +245,38 @@ main {
     background-color: #5da0db;
 }
 
+.info {
+    display: flex;
+}
 
+.info>img {
+    width: 65%;
+}
 
+.info-details {
+    width: 35%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 1.5rem;
+    background-color: #262627;
+}
+
+.info-details p {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    color: #e9e4e2;
+    justify-content: space-between;
+}
+
+.info-details p:not(:last-child) {
+    border-bottom: 1px solid #3c3c3d;
+}
+
+.info-details p span {
+    font-weight: 700;
+}
 
 
 @media only screen and (min-width : 768px) {
@@ -224,4 +289,10 @@ main {
     .card {
         flex: 1 0 24%;
     }
+
+    .socials {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.66);
+    }
+
 }
