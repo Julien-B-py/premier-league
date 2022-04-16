@@ -13,6 +13,10 @@ function getActiveImg() {
 
 function changeActiveImg() {
     const currentImgIndex = getActiveImg();
+
+    
+    // slides[currentImgIndex].addEventListener("animationend", ()=> console.log("anima"))
+
     slides[currentImgIndex].classList.remove("active");
 
     if (currentImgIndex === slides.length - 1) {
@@ -22,5 +26,7 @@ function changeActiveImg() {
 
     slides[currentImgIndex + 1].classList.add("active");
 }
+
+
 
 setInterval(changeActiveImg, 5000); 

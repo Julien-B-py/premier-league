@@ -42,6 +42,16 @@ foreach ($premierLeagueTeams["teams"] as $team) {
             <main>
                 <h1 class="heading-details"><?= $team["strAlternate"] ?><img src=<?= $team["strTeamBadge"] ?> alt=""></h1>
 
+                <?php
+
+                $array_keys = array_keys($team);
+                foreach ($array_keys as $array_key) {
+                    if (str_contains($array_key, 'strLeague') && $team[$array_key]) {       ?>
+                        <div><?= $team[$array_key] ?></div>
+                <?php    }
+                }   ?>
+
+
                 <section>
                     <p><?= $team["strDescriptionEN"] ?></p>
                     <div class="images">
