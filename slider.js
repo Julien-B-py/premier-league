@@ -1,30 +1,26 @@
 const slides = document.querySelectorAll(".slider img");
 const imagesCount = slides.length;
 
-function getActiveImg() {
-    let activeImgIndex;
-    slides.forEach((slide, index) => {
-        if (slide.classList.length > 0) {
-            activeImgIndex = index;
-        }
-    });
-    return activeImgIndex;
-}
+var currentImgIndex = 0;
 
 function changeActiveImg() {
-    const currentImgIndex = getActiveImg();
 
-    
-    // slides[currentImgIndex].addEventListener("animationend", ()=> console.log("anima"))
-
-    slides[currentImgIndex].classList.remove("active");
-
-    if (currentImgIndex === slides.length - 1) {
-        slides[0].classList.add("active");
+    gsap.to(slides[currentImgIndex], { autoAlpha: 0, duration: 1 })
+    currentImgIndex++;
+    if (currentImgIndex === slides.length) {
+        currentImgIndex = 0;
+        gsap.to(slides[0], { autoAlpha: 1, duration: 1 })
         return;
     }
 
-    slides[currentImgIndex + 1].classList.add("active");
+
+
+    gsap.to(slides[currentImgIndex], { autoAlpha: 1, duration: 1 })
+
+
+
+
+
 }
 
 

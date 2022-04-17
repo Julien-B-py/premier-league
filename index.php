@@ -17,47 +17,54 @@ require_once './arrayTeams.php';
 
 <body>
 
+    <?php require_once "./components/loading.php"; ?>
     <?php require_once "./components/navbar.php"; ?>
+
+
 
     <main>
 
-        <h1>Clubs</h1>
+        <div class="responsive-container">
 
-        <div class="clubs">
+            <h1>Clubs</h1>
 
-            <?php
+            <div class="clubs">
 
-            foreach ($premierLeagueTeams["teams"] as $team) {
+                <?php
 
-            ?>
+                foreach ($premierLeagueTeams["teams"] as $team) {
 
-                <div class="card">
+                ?>
 
-                    <div class="front">
+                    <div class="card">
 
-                        <img src="  <?= $team["strStadiumThumb"] ?>" alt="">
-                        <div class="details">
-                            <h2><?= $team["strTeam"] ?></h2>
-                            <p><?= $team["strStadium"] ?></p>
-                            <p><?= $team["intFormedYear"] ?></p>
+                        <div class="front">
+
+                            <img src="  <?= $team["strStadiumThumb"] ?>" alt="">
+                            <div class="details">
+                                <h2><?= $team["strTeam"] ?></h2>
+                                <p><?= $team["strStadium"] ?></p>
+                                <p><?= $team["intFormedYear"] ?></p>
+                            </div>
+                            <div class="badge">
+                                <img src="<?= $team["strTeamBadge"] ?>" alt="">
+                            </div>
+
                         </div>
-                        <div class="badge">
-                            <img src="<?= $team["strTeamBadge"] ?>" alt="">
+
+                        <div class="back">
+
+                            <img src="<?= $team["strTeamJersey"]  ?>" alt="">
+                            <p><?= $team["strDescriptionEN"] ?></p>
+                            <button><a href="./detail.php?idTeam=<?= $team["idTeam"] ?>">Read more</a></button>
+
                         </div>
 
                     </div>
 
-                    <div class="back">
+                <?php  }  ?>
 
-                        <img src="<?= $team["strTeamJersey"]  ?>" alt="">
-                        <p><?= $team["strDescriptionEN"] ?></p>
-                        <button><a href="./detail.php?idTeam=<?= $team["idTeam"] ?>">Read more</a></button>
-
-                    </div>
-
-                </div>
-
-            <?php  }  ?>
+            </div>
 
         </div>
 
@@ -65,6 +72,7 @@ require_once './arrayTeams.php';
 
     <?php require_once "./components/footer.php"; ?>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>
     <script src="./loading.js"></script>
 
 </body>

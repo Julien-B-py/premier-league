@@ -10,7 +10,7 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #2b2b2c;
     padding-top: 86px;
-    /* padding-inline: 1rem; */
+    position: relative;
 }
 
 footer {
@@ -55,8 +55,8 @@ h2 {
 
 
 main {
-    width: min(100%, 1200px);
-    margin: 2rem auto;
+
+    margin: 4rem auto;
     padding-inline: 1rem;
 }
 
@@ -64,6 +64,56 @@ main {
     width: min(100%, 1200px);
     margin: auto;
 }
+
+
+.loading {
+    background-color: #2b2b2c;
+    min-height: 100vh;
+    position: absolute;
+    width: 100%;
+    z-index: 200;
+    color: #e9e4e2;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading p {
+    color: #5da0db;
+    font-size: 2rem;
+    font-weight: 200;
+    display: flex;
+    align-items: baseline;
+}
+
+.loading span {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.loading svg {
+    height: 18px;
+    width: auto;
+    animation: rotate 2s linear infinite;
+}
+
+.loading-container {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loading-bar {
+    height: 1px;
+    background-color: #5da0db;
+    width: 0%;
+    align-self: flex-start;
+}
+
+
+
 
 .nav-container {
     width: min(100%, 1200px);
@@ -278,6 +328,7 @@ header img {
 
 .info {
     display: flex;
+    margin-bottom: 2rem;
 }
 
 .info>img {
@@ -311,48 +362,87 @@ header img {
 
 
 section {
-    display: flex;
-    gap: 2rem;
+    margin-bottom: 4rem;
 }
 
-section p {
+
+.content {
+    display: flex;
+}
+
+.content>p {
     line-height: 2rem;
     color: #d2cdcb;
+    width: 65%;
+    padding-right: 2rem;
 }
 
 .images {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    background-color: #262627;
+    padding-inline: 1.5rem;
+    width: 35%;
+    gap: 1.5rem;
+    padding-block: 1rem;
+}
+
+.images .paragraphs {
+    width: 100%;
+}
+
+.images p {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    color: #e9e4e2;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.images p:not(:last-child) {
+    border-bottom: 1px solid #3c3c3d;
 }
 
 .images img {
     width: 50%;
 }
 
+#competitions p {
+    border: 1px solid #d2cdcb;
+    width: max-content;
+    padding: 0.5rem 1rem;
+    border-radius: 50rem;
+    color: #d2cdcb;
+    margin-bottom: 0.625rem;
+}
+
 .slider {
     position: relative;
     width: 100%;
     aspect-ratio: 16/9;
+    margin-bottom: 4rem;
 }
 
 .slider img {
     width: 100%;
     position: absolute;
-    opacity: 0;
-    transition: all 1s;
+    /* opacity: 0; */
+    /* transition: all 1s; */
+    visibility: hidden;
 }
 
-.slider img.active {
+.slider img.first {
     opacity: 1;
+    visibility: inherit;
 }
 
 .clubs-bar {
     display: flex;
     overflow-x: auto;
     justify-content: space-between;
-    margin-bottom: 2.5rem;
     gap: 1rem;
 
 }
@@ -387,6 +477,17 @@ section p {
 }
 
 
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
 @media only screen and (min-width : 768px) {
     .card {
         flex: 1 0 48%;
@@ -394,10 +495,6 @@ section p {
 }
 
 @media only screen and (min-width : 1025px) {
-
-    main {
-        padding-inline: 0;
-    }
 
     .card {
         flex: 1 0 24%;

@@ -23,6 +23,8 @@ foreach ($premierLeagueTeams["teams"] as $team) {
 
         <body>
 
+
+            <?php require_once "./components/loading.php"; ?>
             <?php require_once "./components/navbar.php"; ?>
             <header>
                 <img src=<?= $team["strTeamBanner"] ?> alt="">
@@ -40,90 +42,103 @@ foreach ($premierLeagueTeams["teams"] as $team) {
                 </div>
             </header>
             <main>
-                <h1 class="heading-details"><?= $team["strAlternate"] ?><img src=<?= $team["strTeamBadge"] ?> alt=""></h1>
-
-
-
-                <h2>History</h2>
-                <section>
-                    <p><?= $team["strDescriptionEN"] ?></p>
-                    <div class="images">
-                        <p>Nickname(s)<span><?= explode(",", $team["strKeywords"])[0] ?></span></p>
-                        <p>Founded<span><?= $team["intFormedYear"] ?></span></p>
-                        Official Jersey
-                        <img src=<?= $team["strTeamJersey"] ?> alt="">
-
-                    </div>
+                <div class="responsive-container">
+                    <h1 class="heading-details"><?= $team["strAlternate"] ?><img src=<?= $team["strTeamBadge"] ?> alt=""></h1>
 
 
 
 
-                </section>
+                    <section id="history">
+                        <h2>History</h2>
+                        <div class="content">
+                            <p><?= $team["strDescriptionEN"] ?></p>
+                            <div class="images">
+                                <div class="paragraphs">
+                                    <p>Nickname(s)<span><?= explode(",", $team["strKeywords"])[0] ?></span></p>
+                                    <p>Founded<span><?= $team["intFormedYear"] ?></span></p>
+                                    <p>Official Jersey</p>
+                                </div>
+                                <img src=<?= $team["strTeamJersey"] ?> alt="">
+
+                            </div>
+                        </div>
+                    </section>
 
 
-                <h2>Stadium</h2>
-                <div class="info">
-                    <div class="info-details">
-                        <p>Ground<span><?= $team["strStadium"] ?></span></p>
-                        <p>Location<span><?= $team["strStadiumLocation"] ?></span></p>
-                        <p>Capacity<span><?= $team["intStadiumCapacity"] ?></span></p>
-                    </div>
-                    <img src=<?= $team["strStadiumThumb"] ?> alt="">
+                    <section id="stadium">
+                        <h2>Stadium</h2>
+                        <div class="info">
+                            <div class="info-details">
+                                <p>Ground<span><?= $team["strStadium"] ?></span></p>
+                                <p>Location<span><?= $team["strStadiumLocation"] ?></span></p>
+                                <p>Capacity<span><?= $team["intStadiumCapacity"] ?></span></p>
+                            </div>
+                            <img src=<?= $team["strStadiumThumb"] ?> alt="">
 
+                        </div>
+
+                        <div class="content">
+                            <p><?= $team["strStadiumDescription"] ?></p>
+                        </div>
+                    </section>
+
+
+                    <section id="competitions">
+                        <h2>Competitions</h2>
+                        <?php
+
+                        $array_keys = array_keys($team);
+                        foreach ($array_keys as $array_key) {
+                            if (str_contains($array_key, 'strLeague') && $team[$array_key]) {       ?>
+                                <p><?= $team[$array_key] ?></p>
+                        <?php    }
+                        }   ?>
+                    </section>
+
+                    <section id="gallery">
+                        <h2>Gallery</h2>
+                        <div class="slider">
+                            <img class="first" src=<?= $team["strTeamFanart1"] ?> alt="">
+                            <img src=<?= $team["strTeamFanart2"] ?> alt="">
+                            <img src=<?= $team["strTeamFanart3"] ?> alt="">
+                            <img src=<?= $team["strTeamFanart4"] ?> alt="">
+                        </div>
+                    </section>
+
+
+            <?php
+        }
+    }
+            ?>
+
+            <section id="clubs">
+                <h2>Premier League clubs</h2>
+                <div class="clubs-bar responsive-container">
+
+
+
+                    <?php
+                    foreach ($premierLeagueTeams["teams"] as $team) {
+                        if ($team["idTeam"] !== $teamId) {  ?>
+
+                            <a class="clubs-bar-club" href="./detail.php?idTeam=<?= $team["idTeam"] ?>">
+                                <img src=<?= $team["strTeamBadge"] ?> alt="">
+                                <span><?= $team["strTeamShort"] ?></span>
+                            </a>
+
+                    <?php }
+                    }
+                    ?>
                 </div>
-
-                <section>
-                    <p><?= $team["strStadiumDescription"] ?></p>
-                </section>
-
-
-                <h2>Competitions</h2>
-                <?php
-
-                $array_keys = array_keys($team);
-                foreach ($array_keys as $array_key) {
-                    if (str_contains($array_key, 'strLeague') && $team[$array_key]) {       ?>
-                        <div><?= $team[$array_key] ?></div>
-                <?php    }
-                }   ?>
-
-                <h2>Gallery</h2>
-                <div class="slider">
-                    <img class="active" src=<?= $team["strTeamFanart1"] ?> alt="">
-                    <img src=<?= $team["strTeamFanart2"] ?> alt="">
-                    <img src=<?= $team["strTeamFanart3"] ?> alt="">
-                    <img src=<?= $team["strTeamFanart4"] ?> alt="">
+            </section>
                 </div>
-
             </main>
 
-    <?php
-    }
-}
-    ?>
+            <?php require_once "./components/footer.php"; ?>
 
-    <div class="clubs-bar responsive-container">
-
-
-
-        <?php
-        foreach ($premierLeagueTeams["teams"] as $team) {
-            if ($team["idTeam"] !== $teamId) {  ?>
-
-                <a class="clubs-bar-club" href="./detail.php?idTeam=<?= $team["idTeam"] ?>">
-                    <img src=<?= $team["strTeamBadge"] ?> alt="">
-                    <span><?= $team["strTeamShort"] ?></span>
-                </a>
-
-        <?php }
-        }
-        ?>
-    </div>
-
-
-    <?php require_once "./components/footer.php"; ?>
-
-    <script src="./slider.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>
+            <script src="./loading.js"></script>
+            <script src="./slider.js"></script>
         </body>
 
         </html>
