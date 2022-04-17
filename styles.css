@@ -10,7 +10,6 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #2b2b2c;
     padding-top: 86px;
-    position: relative;
 }
 
 footer {
@@ -55,7 +54,6 @@ h2 {
 
 
 main {
-
     margin: 4rem auto;
     padding-inline: 1rem;
 }
@@ -69,7 +67,8 @@ main {
 .loading {
     background-color: #2b2b2c;
     min-height: 100vh;
-    position: absolute;
+    position: fixed;
+    left:0;
     width: 100%;
     z-index: 200;
     color: #e9e4e2;
@@ -214,6 +213,7 @@ header img {
 .heading-details {
     display: flex;
     gap: 1rem;
+    align-items: center;
 }
 
 .heading-details img {
@@ -329,18 +329,19 @@ header img {
 .info {
     display: flex;
     margin-bottom: 2rem;
+    flex-direction: column;
 }
 
 .info>img {
-    width: 65%;
+
+    order: -1;
 }
 
 .info-details {
-    width: 35%;
     justify-content: center;
     display: flex;
     flex-direction: column;
-    padding-inline: 1.5rem;
+    padding-inline: 1rem;
     background-color: #262627;
 }
 
@@ -368,13 +369,15 @@ section {
 
 .content {
     display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .content>p {
     line-height: 2rem;
     color: #d2cdcb;
-    width: 65%;
-    padding-right: 2rem;
+    /* width: 65%; */
+
 }
 
 .images {
@@ -383,10 +386,11 @@ section {
     justify-content: center;
     align-items: center;
     background-color: #262627;
-    padding-inline: 1.5rem;
-    width: 35%;
+    padding-inline: 1rem;
+    /* width: 35%; */
     gap: 1.5rem;
     padding-block: 1rem;
+    order: -1;
 }
 
 .images .paragraphs {
@@ -495,6 +499,35 @@ section {
 }
 
 @media only screen and (min-width : 1025px) {
+
+    .content {
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .content>p {
+        width: 65%;
+        padding-right: 2rem;
+    }
+
+    .images {
+        width: 35%;
+        order: 0;
+        padding-inline: 1.5rem;
+    }
+
+    .info {
+        flex-direction: row;
+    }
+
+    .info>img {
+        width: 65%;
+    }
+
+    .info-details {
+        width: 35%;
+        padding-inline: 1.5rem;
+    }
 
     .card {
         flex: 1 0 24%;

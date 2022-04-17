@@ -1,5 +1,5 @@
 <?php
-require_once './arrayTeams.php';
+require_once './constants/arrayTeams.php';
 ?>
 
 <!DOCTYPE html>
@@ -11,14 +11,14 @@ require_once './arrayTeams.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="./styles.css">
-    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="shortcut icon" href="./images/favicon.ico" />
     <title>Premier League | Clubs</title>
 </head>
 
 <body>
 
-    <?php require_once "./components/loading.php"; ?>
-    <?php require_once "./components/navbar.php"; ?>
+    <?php require_once "./components/loading.php";
+    require_once "./components/navbar.html"; ?>
 
 
 
@@ -73,7 +73,7 @@ require_once './arrayTeams.php';
     <?php require_once "./components/footer.php"; ?>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>
-    <script src="./loading.js"></script>
+    <script src="./scripts/loading.js"></script>
 
 </body>
 
