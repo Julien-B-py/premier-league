@@ -27,7 +27,7 @@ foreach ($premierLeagueTeams["teams"] as $team) {
             <?php require_once "./components/loading.php";
             require_once "./components/navbar.html"; ?>
             <header>
-                <img src=<?= $team["strTeamBanner"] ?> alt="">
+                <img src=<?= $team["strTeamBanner"] ?> alt="<?= $team["strTeam"] ?> banner">
                 <div class="socials">
                     <div class="socials-container">
                         <a class="fa-brands fa-facebook-f" href="http://<?= $team["strFacebook"] ?>"></a>
@@ -43,7 +43,7 @@ foreach ($premierLeagueTeams["teams"] as $team) {
             </header>
             <main>
                 <div class="responsive-container">
-                    <h1 class="heading-details"><?= $team["strAlternate"] ?><img src=<?= $team["strTeamBadge"] ?> alt=""></h1>
+                    <h1 class="heading-details"><?= $team["strAlternate"] ?><img src=<?= $team["strTeamBadge"] ?> alt="<?= $team["strTeam"] ?> club badge"></h1>
 
 
 
@@ -58,7 +58,7 @@ foreach ($premierLeagueTeams["teams"] as $team) {
                                     <p>Founded<span><?= $team["intFormedYear"] ?></span></p>
                                     <p>Official Jersey</p>
                                 </div>
-                                <img src=<?= $team["strTeamJersey"] ?> alt="">
+                                <img src=<?= $team["strTeamJersey"] ?> alt="<?= $team["strTeam"] ?> home shirt">
 
                             </div>
                         </div>
@@ -73,7 +73,7 @@ foreach ($premierLeagueTeams["teams"] as $team) {
                                 <p>Location<span><?= $team["strStadiumLocation"] ?></span></p>
                                 <p>Capacity<span><?= $team["intStadiumCapacity"] ?></span></p>
                             </div>
-                            <img src=<?= $team["strStadiumThumb"] ?> alt="">
+                            <img src=<?= $team["strStadiumThumb"] ?> alt="<?= $team["strStadium"] ?>">
 
                         </div>
 
@@ -98,10 +98,10 @@ foreach ($premierLeagueTeams["teams"] as $team) {
                     <section id="gallery">
                         <h2>Gallery</h2>
                         <div class="slider">
-                            <img class="first" src=<?= $team["strTeamFanart1"] ?> alt="">
-                            <img src=<?= $team["strTeamFanart2"] ?> alt="">
-                            <img src=<?= $team["strTeamFanart3"] ?> alt="">
-                            <img src=<?= $team["strTeamFanart4"] ?> alt="">
+                            <img class="first" src=<?= $team["strTeamFanart1"] ?> alt="<?= $team["strTeam"] ?> fan art">
+                            <img src=<?= $team["strTeamFanart2"] ?> alt="<?= $team["strTeam"] ?> fan art">
+                            <img src=<?= $team["strTeamFanart3"] ?> alt="<?= $team["strTeam"] ?> fan art">
+                            <img src=<?= $team["strTeamFanart4"] ?> alt="<?= $team["strTeam"] ?> fan art">
                         </div>
                     </section>
 
@@ -122,7 +122,7 @@ foreach ($premierLeagueTeams["teams"] as $team) {
                         if ($team["idTeam"] !== $teamId) {  ?>
 
                             <a class="clubs-bar-club" href="./detail.php?idTeam=<?= $team["idTeam"] ?>">
-                                <img src=<?= $team["strTeamBadge"] ?> alt="">
+                                <img src=<?= $team["strTeamBadge"] ?> alt="<?= $team["strTeam"] ?> club badge">
                                 <span><?= $team["strTeamShort"] ?></span>
                             </a>
 

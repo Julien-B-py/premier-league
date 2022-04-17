@@ -13,16 +13,8 @@ function changeActiveImg() {
         return;
     }
 
-
-
     gsap.to(slides[currentImgIndex], { autoAlpha: 1, duration: 1 })
 
-
-
-
-
 }
-
-
 
 setInterval(changeActiveImg, 5000); 

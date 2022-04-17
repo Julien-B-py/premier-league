@@ -40,21 +40,23 @@ require_once './constants/arrayTeams.php';
 
                         <div class="front">
 
-                            <img src="  <?= $team["strStadiumThumb"] ?>" alt="">
+                            <p>Click to flip</p>
+
+                            <img src="  <?= $team["strStadiumThumb"] ?>" alt="<?= $team["strStadium"] ?>">
                             <div class="details">
                                 <h2><?= $team["strTeam"] ?></h2>
                                 <p><?= $team["strStadium"] ?></p>
                                 <p><?= $team["intFormedYear"] ?></p>
                             </div>
                             <div class="badge">
-                                <img src="<?= $team["strTeamBadge"] ?>" alt="">
+                                <img src="<?= $team["strTeamBadge"] ?>" alt="<?= $team["strAlternate"] ?>">
                             </div>
 
                         </div>
 
                         <div class="back">
 
-                            <img src="<?= $team["strTeamJersey"]  ?>" alt="">
+                            <img src="<?= $team["strTeamJersey"]  ?>" alt="<?= $team["strTeam"] ?> home shirt">
                             <p><?= $team["strDescriptionEN"] ?></p>
                             <button><a href="./detail.php?idTeam=<?= $team["idTeam"] ?>">Read more</a></button>
 
@@ -74,6 +76,7 @@ require_once './constants/arrayTeams.php';
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>
     <script src="./scripts/loading.js"></script>
+    <script src="./scripts/cards.js"></script>
 
 </body>
 
