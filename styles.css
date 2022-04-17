@@ -68,7 +68,7 @@ main {
     background-color: #2b2b2c;
     min-height: 100vh;
     position: fixed;
-    left:0;
+    left: 0;
     width: 100%;
     z-index: 200;
     color: #e9e4e2;
@@ -522,7 +522,9 @@ section {
 
     .info>img {
         width: 65%;
+        order: 0;
     }
+
 
     .info-details {
         width: 35%;
