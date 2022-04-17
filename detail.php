@@ -42,21 +42,17 @@ foreach ($premierLeagueTeams["teams"] as $team) {
             <main>
                 <h1 class="heading-details"><?= $team["strAlternate"] ?><img src=<?= $team["strTeamBadge"] ?> alt=""></h1>
 
-                <?php
-
-                $array_keys = array_keys($team);
-                foreach ($array_keys as $array_key) {
-                    if (str_contains($array_key, 'strLeague') && $team[$array_key]) {       ?>
-                        <div><?= $team[$array_key] ?></div>
-                <?php    }
-                }   ?>
 
 
+                <h2>History</h2>
                 <section>
                     <p><?= $team["strDescriptionEN"] ?></p>
                     <div class="images">
-
+                        <p>Nickname(s)<span><?= explode(",", $team["strKeywords"])[0] ?></span></p>
+                        <p>Founded<span><?= $team["intFormedYear"] ?></span></p>
+                        Official Jersey
                         <img src=<?= $team["strTeamJersey"] ?> alt="">
+
                     </div>
 
 
@@ -64,10 +60,10 @@ foreach ($premierLeagueTeams["teams"] as $team) {
 
                 </section>
 
+
+                <h2>Stadium</h2>
                 <div class="info">
                     <div class="info-details">
-                        <p>Nickname(s)<span><?= explode(",", $team["strKeywords"])[0] ?></span></p>
-                        <p>Founded<span><?= $team["intFormedYear"] ?></span></p>
                         <p>Ground<span><?= $team["strStadium"] ?></span></p>
                         <p>Location<span><?= $team["strStadiumLocation"] ?></span></p>
                         <p>Capacity<span><?= $team["intStadiumCapacity"] ?></span></p>
@@ -80,6 +76,18 @@ foreach ($premierLeagueTeams["teams"] as $team) {
                     <p><?= $team["strStadiumDescription"] ?></p>
                 </section>
 
+
+                <h2>Competitions</h2>
+                <?php
+
+                $array_keys = array_keys($team);
+                foreach ($array_keys as $array_key) {
+                    if (str_contains($array_key, 'strLeague') && $team[$array_key]) {       ?>
+                        <div><?= $team[$array_key] ?></div>
+                <?php    }
+                }   ?>
+
+                <h2>Gallery</h2>
                 <div class="slider">
                     <img class="active" src=<?= $team["strTeamFanart1"] ?> alt="">
                     <img src=<?= $team["strTeamFanart2"] ?> alt="">

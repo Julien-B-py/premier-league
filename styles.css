@@ -47,11 +47,17 @@ h1 {
     font-weight: 900;
 }
 
+h2 {
+    color: #e9e4e2;
+    margin-bottom: 1rem;
+}
+
 
 
 main {
     width: min(100%, 1200px);
     margin: 2rem auto;
+    padding-inline: 1rem;
 }
 
 .responsive-container {
@@ -89,6 +95,7 @@ header img {
     bottom: 0;
     left: 0;
     right: 0;
+    padding-inline: 1rem;
 }
 
 .socials-container {
@@ -304,8 +311,7 @@ header img {
 
 
 section {
-    display: grid;
-    grid-template-columns: 65% 35%;
+    display: flex;
     gap: 2rem;
 }
 
@@ -344,9 +350,11 @@ section p {
 
 .clubs-bar {
     display: flex;
-
+    overflow-x: auto;
     justify-content: space-between;
     margin-bottom: 2.5rem;
+    gap: 1rem;
+
 }
 
 .clubs-bar a {
@@ -386,6 +394,11 @@ section p {
 }
 
 @media only screen and (min-width : 1025px) {
+
+    main {
+        padding-inline: 0;
+    }
+
     .card {
         flex: 1 0 24%;
     }

@@ -63,6 +63,10 @@ require_once './arrayTeams.php';
 
     </main>
 
+    <?php require_once "./components/footer.php"; ?>
+
+    <script src="./loading.js"></script>
+
 </body>
 
 </html>
