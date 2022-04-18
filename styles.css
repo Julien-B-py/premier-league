@@ -371,6 +371,7 @@ header img {
 
 .info>img {
     order: -1;
+    width: 100%;
 }
 
 .info-details {
