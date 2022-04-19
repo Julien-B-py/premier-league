@@ -1,4 +1,4 @@
-const slides = document.querySelectorAll(".slider img");
+const slides = document.querySelectorAll(".gallery__slider img");
 const imagesCount = slides.length;
 
 var currentImgIndex = 0;

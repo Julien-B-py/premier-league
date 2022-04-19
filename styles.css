@@ -68,7 +68,7 @@ main {
     padding-inline: 1rem;
 }
 
-.responsive-container {
+.responsive__container {
     width: min(100%, 1200px);
     margin: auto;
 }
@@ -107,14 +107,14 @@ main {
     animation: rotate 2s linear infinite;
 }
 
-.loading-container {
+.loading__container {
     width: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.loading-bar {
+.loading__bar {
     height: 1px;
     background-color: var(--accent);
     width: 0%;
@@ -124,7 +124,7 @@ main {
 
 
 
-.nav-container {
+.nav__container {
     width: min(100%, 1200px);
     margin: auto;
     display: flex;
@@ -132,7 +132,7 @@ main {
     align-items: center;
 }
 
-.nav-icons {
+.nav__icons {
     display: flex;
     gap: 1.5rem;
 }
@@ -157,7 +157,7 @@ header img {
     padding-inline: 1rem;
 }
 
-.socials-container {
+.socials__container {
     height: 100%;
     width: min(100%, 1200px);
     margin: auto;
@@ -166,18 +166,18 @@ header img {
     align-items: center;
 }
 
-.socials-container a {
+.socials__container a {
     color: var(--accent);
     text-decoration: none;
 }
 
-.clubs {
+.club__cards {
     display: flex;
     flex-wrap: wrap;
     gap: var(--cards-grid-gap);
 }
 
-.card {
+.club__card {
     /* min-height: 400px; */
     perspective: 1000px;
     position: relative;
@@ -195,7 +195,7 @@ header img {
     transform: rotateY(0deg);
 } */
 
-.front {
+.club__card__front {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -206,7 +206,7 @@ header img {
     flex-direction: column;
 }
 
-.front::after {
+.club__card__front::after {
     content: "";
     position: absolute;
     height: 50%;
@@ -216,7 +216,7 @@ header img {
     transition: all 0.3s ease;
 }
 
-.front>img {
+.club__card__front>img {
     width: 100%;
     height: 50%;
     object-fit: cover;
@@ -224,7 +224,7 @@ header img {
     z-index: -2;
 }
 
-.front>p {
+.club__card__front>p {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -232,31 +232,31 @@ header img {
     transition: all 0.3s ease;
 }
 
-.front:hover>p {
+.club__card__front:hover>p {
     opacity: 1;
     transform: translateY(450%) translateX(-50%);
 }
 
-.front:hover::after {
+.club__card__front:hover::after {
     background-color: rgba(0, 0, 0, .75);
 }
 
-.front:hover .badge::after {
+.club__card__front:hover .club__card__front__badge::after {
     transform: scale(1.2) rotate(360deg);
     border: 3px dotted var(--secondary-text);
 }
 
-.heading-details {
+.heading {
     display: flex;
     gap: 1rem;
     align-items: center;
 }
 
-.heading-details img {
+.heading img {
     height: 48px;
 }
 
-.badge {
+.club__card__front__badge {
     background-color: var(--main-text);
     border-radius: 50%;
     padding-top: 30%;
@@ -267,7 +267,7 @@ header img {
     transform: translate(-50%, -50%);
 }
 
-.badge::after {
+.club__card__front__badge::after {
     content: "";
     position: absolute;
     transform: scale(1.1);
@@ -280,7 +280,7 @@ header img {
     transition: all 0.3s ease;
 }
 
-.badge img {
+.club__card__front__badge img {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -289,7 +289,7 @@ header img {
 }
 
 
-.details {
+.club__card__front__details {
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -300,13 +300,13 @@ header img {
     padding-top: 15%;
 }
 
-.details p {
+.club__card__front__details p {
     color: var(--secondary-text);
 }
 
 
 
-.back {
+.club__card__back {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -324,13 +324,13 @@ header img {
     padding: 1rem;
 }
 
-.back img {
+.club__card__back img {
     width: 100%;
     height: 40%;
     object-fit: contain;
 }
 
-.back p {
+.club__card__back p {
     display: -webkit-box;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
@@ -341,7 +341,7 @@ header img {
 }
 
 
-.back button {
+.club__card__back button {
     background-color: var(--main-text);
     border: none;
     font-family: 'Roboto', sans-serif;
@@ -351,30 +351,30 @@ header img {
     font-weight: 700;
 }
 
-.back a {
+.club__card__back a {
     color: #000e14;
     text-decoration: none;
     display: block;
     padding: 0.5rem 1rem;
 }
 
-.back button:hover {
+.club__card__back button:hover {
     letter-spacing: 1px;
     background-color: var(--accent);
 }
 
-.info {
+.stadium__info {
     display: flex;
     margin-bottom: 2rem;
     flex-direction: column;
 }
 
-.info>img {
+.stadium__info>img {
     order: -1;
     width: 100%;
 }
 
-.info-details {
+.stadium__info__details {
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -382,7 +382,7 @@ header img {
     background-color: #262627;
 }
 
-.info-details p {
+.stadium__info__details p {
     height: 48px;
     display: flex;
     align-items: center;
@@ -390,11 +390,11 @@ header img {
     justify-content: space-between;
 }
 
-.info-details p:not(:last-child) {
+.stadium__info__details p:not(:last-child) {
     border-bottom: 1px solid #3c3c3d;
 }
 
-.info-details p span {
+.stadium__info__details p span {
     font-weight: 700;
 }
 
@@ -404,18 +404,18 @@ section {
 }
 
 
-.content {
+.section__content {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.content>p {
+.section__content>p {
     line-height: 2rem;
     color: var(--main-text-darker);
 }
 
-.images {
+.history__details {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -427,11 +427,11 @@ section {
     order: -1;
 }
 
-.images .paragraphs {
+.history__details .history__details__data {
     width: 100%;
 }
 
-.images p {
+.history__details p {
     height: 48px;
     display: flex;
     align-items: center;
@@ -440,11 +440,11 @@ section {
     width: 100%;
 }
 
-.images p:not(:last-child) {
+.history__details p:not(:last-child) {
     border-bottom: 1px solid #3c3c3d;
 }
 
-.images img {
+.history__details img {
     width: 50%;
 }
 
@@ -457,25 +457,25 @@ section {
     margin-bottom: 0.625rem;
 }
 
-.slider {
+.gallery__slider {
     position: relative;
     width: 100%;
     aspect-ratio: 16/9;
     margin-bottom: 4rem;
 }
 
-.slider img {
+.gallery__slider img {
     width: 100%;
     position: absolute;
     visibility: hidden;
 }
 
-.slider img.first {
+.gallery__slider img.gallery__slider__first {
     opacity: 1;
     visibility: inherit;
 }
 
-.clubs-bar {
+.clubs__bar {
     display: flex;
     overflow-x: auto;
     justify-content: space-between;
@@ -483,24 +483,24 @@ section {
 
 }
 
-.clubs-bar a {
+.clubs__bar a {
     color: var(--main-text-darker);
     text-decoration: none;
     transition: ease-in-out 300ms;
 }
 
-.clubs-bar a:hover {
+.clubs__bar a:hover {
     letter-spacing: 1px;
     color: var(--accent);
 }
 
-.clubs-bar span {
+.clubs__bar span {
     font-size: 0.75rem;
     font-weight: 700;
 }
 
 
-.clubs-bar-club {
+.clubs__bar__club {
     display: flex;
     flex-direction: column;
     height: 80px;
@@ -508,7 +508,7 @@ section {
     justify-content: space-around;
 }
 
-.clubs-bar-club img {
+.clubs__bar__club img {
     height: 50%;
 }
 
@@ -525,7 +525,7 @@ section {
 
 
 @media only screen and (min-width : 481px) {
-    .card {
+    .club__card {
         width: calc((100% - var(--cards-grid-gap)) / 2);
     }
 }
@@ -533,7 +533,7 @@ section {
 
 @media only screen and (min-width : 769px) {
 
-    .card {
+    .club__card {
         width: calc((100% - 2* var(--cards-grid-gap)) / 3);
     }
 }
@@ -542,38 +542,38 @@ section {
 
 @media only screen and (min-width : 1025px) {
 
-    .content {
+    .section__content {
         flex-direction: row;
         gap: 0;
     }
 
-    .content>p {
+    .section__content>p {
         width: 65%;
         padding-right: 2rem;
     }
 
-    .images {
+    .history__details {
         width: 35%;
         order: 0;
         padding-inline: 1.5rem;
     }
 
-    .info {
+    .stadium__info {
         flex-direction: row;
     }
 
-    .info>img {
+    .stadium__info>img {
         width: 65%;
         order: 0;
     }
 
 
-    .info-details {
+    .stadium__info__details {
         width: 35%;
         padding-inline: 1.5rem;
     }
 
-    .card {
+    .club__card {
         width: calc((100% - 3* var(--cards-grid-gap)) / 4);
     }
 

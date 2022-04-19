@@ -1,7 +1,7 @@
 // Select elements from the DOM
 const images = document.getElementsByTagName("img");
-const loadingText = document.querySelector(".loading-container span");
-const loadingBar = document.querySelector(".loading-bar");
+const loadingText = document.querySelector(".loading__container span");
+const loadingBar = document.querySelector(".loading__bar");
 const loading = document.querySelector(".loading");
 
 // Check images loading status

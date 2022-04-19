@@ -1,11 +1,11 @@
-const cards = document.querySelectorAll(".card");
+const cards = document.querySelectorAll(".club__card");
 
 cards.forEach(card => {
 
     let flipped = false;
     let clicked = false;
-    const front = card.querySelector(".front");
-    const back = card.querySelector(".back");
+    const front = card.querySelector(".club__card__front");
+    const back = card.querySelector(".club__card__back");
     const button = card.querySelector("button");
 
     button.addEventListener("click", () => {

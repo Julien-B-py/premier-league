@@ -24,11 +24,11 @@ require_once './constants/arrayTeams.php';
 
     <main>
 
-        <div class="responsive-container">
+        <div class="responsive__container">
 
             <h1>Clubs</h1>
 
-            <div class="clubs">
+            <div class="club__cards">
 
                 <?php
 
@@ -36,25 +36,25 @@ require_once './constants/arrayTeams.php';
 
                 ?>
 
-                    <div class="card">
+                    <div class="club__card">
 
-                        <div class="front">
+                        <div class="club__card__front">
 
                             <p>Click to flip</p>
 
                             <img src="  <?= $team["strStadiumThumb"] ?>" alt="<?= $team["strStadium"] ?>">
-                            <div class="details">
+                            <div class="club__card__front__details">
                                 <h2><?= $team["strTeam"] ?></h2>
                                 <p><?= $team["strStadium"] ?></p>
                                 <p><?= $team["intFormedYear"] ?></p>
                             </div>
-                            <div class="badge">
+                            <div class="club__card__front__badge">
                                 <img src="<?= $team["strTeamBadge"] ?>" alt="<?= $team["strAlternate"] ?>">
                             </div>
 
                         </div>
 
-                        <div class="back">
+                        <div class="club__card__back">
 
                             <img src="<?= $team["strTeamJersey"]  ?>" alt="<?= $team["strTeam"] ?> home shirt">
                             <p><?= $team["strDescriptionEN"] ?></p>
