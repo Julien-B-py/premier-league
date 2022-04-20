@@ -72,11 +72,14 @@ require_once './constants/arrayTeams.php';
 
     </main>
 
-    <?php require_once "./components/footer.php"; ?>
+    <?php
+    require_once "./components/scrolltop.html";
+    require_once "./components/footer.php"; ?>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>
     <script src="./scripts/loading.js"></script>
     <script src="./scripts/cards.js"></script>
+    <script src="./scripts/scrollTop.js"></script>
 
 </body>
 
