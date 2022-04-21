@@ -15,12 +15,12 @@
     --nav: #222223;
 }
 
+/* ---------- GLOBAL ---------- */
 *, *::after, *::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 
 /* ---------- SCROLLBAR ---------- */
 /* -------- Firefox -------- */
@@ -49,12 +49,44 @@
     background: #1f1f20;
 }
 
-
-/* ---------- HTML TAGS ---------- */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--bg);
     padding-top: 86px;
+}
+
+nav {
+    background-color: var(--nav);
+    padding: 1rem;
+    color: var(--main-text);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+nav img {
+    height: 50px;
+}
+
+header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+header img {
+    width: 100%;
+}
+
+main {
+    margin: 4rem auto;
+    padding-inline: 1rem;
+}
+
+section {
+    margin-bottom: 4rem;
 }
 
 footer {
@@ -73,21 +105,7 @@ footer a:hover {
     color: var(--secondary-text-lighter);
 }
 
-nav {
-    background-color: var(--nav);
-    padding: 1rem;
-    color: var(--main-text);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-}
-
-nav img {
-    height: 50px;
-}
-
+/* ---------- TYPOGRAPHY ---------- */
 h1 {
     font-size: 2.5rem;
     color: var(--main-text);
@@ -100,19 +118,13 @@ h2 {
     margin-bottom: 1rem;
 }
 
-
-
-main {
-    margin: 4rem auto;
-    padding-inline: 1rem;
-}
-
+/* ---------- RESPONSIVE CONTAINER ---------- */
 .responsive__container {
     width: min(100%, 1200px);
     margin: auto;
 }
 
-
+/* ---------- LOADING ANIMATION ---------- */
 .loading {
     background-color: var(--bg);
     min-height: 100vh;
@@ -160,9 +172,7 @@ main {
     align-self: flex-start;
 }
 
-
-
-
+/* ---------- NAVBAR ---------- */
 .nav__container {
     width: min(100%, 1200px);
     margin: auto;
@@ -176,16 +186,7 @@ main {
     gap: 1.5rem;
 }
 
-header {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
-header img {
-    width: 100%;
-}
-
+/* ---------- HEADER ---------- */
 .socials {
     height: 40px;
     background-color: var(--bg-darker);
@@ -214,6 +215,7 @@ header img {
     color: var(--accent-lighter);
 }
 
+/* ---------- CLUBS CARDS ---------- */
 .club__cards {
     display: flex;
     flex-wrap: wrap;
@@ -221,7 +223,6 @@ header img {
 }
 
 .club__card {
-    /* min-height: 400px; */
     perspective: 1000px;
     position: relative;
     width: 100%;
@@ -289,16 +290,6 @@ header img {
     border: 3px dotted var(--secondary-text);
 }
 
-.heading {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
-.heading img {
-    height: 48px;
-}
-
 .club__card__front__badge {
     background-color: var(--main-text);
     border-radius: 50%;
@@ -331,7 +322,6 @@ header img {
     width: 70%;
 }
 
-
 .club__card__front__details {
     display: flex;
     flex-direction: column;
@@ -346,8 +336,6 @@ header img {
 .club__card__front__details p {
     color: var(--secondary-text);
 }
-
-
 
 .club__card__back {
     position: absolute;
@@ -383,7 +371,6 @@ header img {
     line-height: 1.6rem;
 }
 
-
 .club__card__back button {
     background-color: var(--main-text);
     border: none;
@@ -406,6 +393,63 @@ header img {
     background-color: var(--accent);
 }
 
+/* ---------- DETAIL PAGE HEADING ---------- */
+.heading {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.heading img {
+    height: 48px;
+}
+
+/* ---------- DETAIL PAGE HISTORY ---------- */
+.history__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-darker);
+    padding-inline: 1rem;
+    gap: 1.5rem;
+    padding-block: 1rem;
+    order: -1;
+}
+
+.history__details .history__details__data {
+    width: 100%;
+}
+
+.history__details p {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    color: var(--main-text);
+    justify-content: space-between;
+    width: 100%;
+}
+
+.history__details p:not(:last-child) {
+    border-bottom: 1px solid var(--border);
+}
+
+.history__details img {
+    width: 50%;
+}
+
+.section__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.section__content>p {
+    line-height: 2rem;
+    color: var(--main-text-darker);
+}
+
+/* ---------- DETAIL PAGE STADIUM ---------- */
 .stadium__info {
     display: flex;
     margin-bottom: 2rem;
@@ -442,56 +486,7 @@ header img {
     text-align: right;
 }
 
-
-section {
-    margin-bottom: 4rem;
-}
-
-
-.section__content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.section__content>p {
-    line-height: 2rem;
-    color: var(--main-text-darker);
-}
-
-.history__details {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--bg-darker);
-    padding-inline: 1rem;
-    gap: 1.5rem;
-    padding-block: 1rem;
-    order: -1;
-}
-
-.history__details .history__details__data {
-    width: 100%;
-}
-
-.history__details p {
-    height: 48px;
-    display: flex;
-    align-items: center;
-    color: var(--main-text);
-    justify-content: space-between;
-    width: 100%;
-}
-
-.history__details p:not(:last-child) {
-    border-bottom: 1px solid var(--border);
-}
-
-.history__details img {
-    width: 50%;
-}
-
+/* ---------- DETAIL PAGE COMPETITIONS ---------- */
 #competitions p {
     border: 1px solid var(--main-text-darker);
     width: max-content;
@@ -501,6 +496,7 @@ section {
     margin-bottom: 0.625rem;
 }
 
+/* ---------- DETAIL PAGE GALLERY ---------- */
 .gallery__slider {
     position: relative;
     width: 100%;
@@ -519,12 +515,12 @@ section {
     visibility: inherit;
 }
 
+/* ---------- DETAIL PAGE CLUBS BAR ---------- */
 .clubs__bar {
     display: flex;
     overflow-x: auto;
     justify-content: space-between;
     gap: 1rem;
-
 }
 
 .clubs__bar a {
@@ -542,7 +538,6 @@ section {
     font-size: 0.75rem;
     font-weight: 700;
 }
-
 
 .clubs__bar__club {
     display: flex;
@@ -595,7 +590,6 @@ section {
 }
 
 /* ---------- RESPONSIVE ---------- */
-
 @media only screen and (min-width : 481px) {
     .club__card {
         width: calc((100% - var(--cards-grid-gap)) / 2);
