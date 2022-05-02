@@ -3,7 +3,8 @@
 require_once './constants/arrayTeams.php';
 
 // Get user requested idTeam param from url
-$teamId = $_GET["idTeam"];
+// Prevent XSS
+$teamId = htmlspecialchars($_GET["idTeam"]);
 // Get idTeam from every single team in premierLeagueTeams array and store all into a new array
 $teamIds = array_column($premierLeagueTeams['teams'], 'idTeam');
 // Look for user requested team id amongst all team ids
