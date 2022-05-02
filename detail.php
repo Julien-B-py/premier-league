@@ -43,14 +43,14 @@ $team = $premierLeagueTeams["teams"][$teamKey];
         <img src=<?= $team["strTeamBanner"] ?> alt="<?= $team["strTeam"] ?> banner">
         <div class="socials">
             <div class="socials__container">
-                <a class="fa-brands fa-facebook-f" href="http://<?= $team["strFacebook"] ?>"></a>
-                <a class="fa-brands fa-instagram" href="http://<?= $team["strInstagram"] ?>"></a>
-                <a class="fa-brands fa-twitter" href="http://<?= $team["strTwitter"] ?>"></a>
-                <a class="fa-brands fa-youtube" href="http://<?= $team["strYoutube"] ?>"></a>
-                <a class="fa-solid fa-globe" href="http://<?= $team["strWebsite"] ?>"></a>
+                <a class="fa-brands fa-facebook-f" href="http://<?= $team["strFacebook"] ?>" target="_blank" rel="noopener noreferrer"></a>
+                <a class="fa-brands fa-instagram" href="http://<?= $team["strInstagram"] ?>" target="_blank" rel="noopener noreferrer"></a>
+                <a class="fa-brands fa-twitter" href="http://<?= $team["strTwitter"] ?>" target="_blank" rel="noopener noreferrer"></a>
+                <a class="fa-brands fa-youtube" href="http://<?= $team["strYoutube"] ?>" target="_blank" rel="noopener noreferrer"></a>
+                <a class="fa-solid fa-globe" href="http://<?= $team["strWebsite"] ?>" target="_blank" rel="noopener noreferrer"></a>
                 <?php
                 if ($team["strRSS"]) : ?>
-                    <a class="fa-solid fa-rss" href="<?= $team["strRSS"] ?>"></a>
+                    <a class="fa-solid fa-rss" href="<?= $team["strRSS"] ?>" target="_blank" rel="noopener noreferrer"></a>
                 <?php
                 endif; ?>
             </div>
