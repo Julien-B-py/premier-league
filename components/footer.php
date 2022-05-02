@@ -8,7 +8,7 @@
     ?>
 
     <?= "©$year," ?>
-    <a href="https://github.com/Julien-B-py">
+    <a href="https://github.com/Julien-B-py" target="_blank" rel="noopener noreferrer">
         Julien BEAUJOIN
         <i class="fab fa-github"></i>
     </a>
