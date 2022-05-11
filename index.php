@@ -80,6 +80,7 @@ require_once './constants/arrayTeams.php';
     <script src="./scripts/loading.js"></script>
     <script src="./scripts/cards.js"></script>
     <script src="./scripts/scrollTop.js"></script>
+    <script src="./scripts/search.js"></script>
 
 </body>
 
