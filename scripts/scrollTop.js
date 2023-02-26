@@ -3,10 +3,14 @@ const scrollTopButton = document.querySelector(".scroll__top");
 
 // Hide or show the button depending on current scroll position
 const manageScrollBtnVisibility = () => {
+    // Get the number of pixels the content of "HTML" is scrolled
+    // If scrolled down more than 100px
     if (document.documentElement.scrollTop > 100) {
-        gsap.to(scrollTopButton, { scale: 1, ease: Expo.easeOut })
+        // Show scroll top button
+        gsap.to(scrollTopButton, { scale: 1, ease: Expo.easeOut });
     } else {
-        gsap.to(scrollTopButton, { scale: 0, ease: Expo.easeOut })
+        // Hide scroll top button
+        gsap.to(scrollTopButton, { scale: 0, ease: Expo.easeOut });
     }
 }
 
